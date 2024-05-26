@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtGuard } from './auth/guards/jwt.guard';
 import { JwtStrategy } from './auth/strategy/jwt.strategy';
+import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { JwtStrategy } from './auth/strategy/jwt.strategy';
     AuthModule,
     UsersModule,
     ConfigModule.forRoot({ isGlobal: true }),
+    TasksModule,
   ],
   controllers: [],
   providers: [
